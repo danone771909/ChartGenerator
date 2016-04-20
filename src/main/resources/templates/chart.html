@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Chart</title>
+</head>
+<body>
+<td>#</td>
+<td>input</td>
+<td>name</td>
+<td>result</td>
+<td>action</td>
+<br />
+    <td th:text="${{c.id}}">id</td>
+    <td th:text="${{c.input}}">input</td>
+    <td th:text="${c.chartname}">name</td>
+    <td th:text="${c.result}">name</td>
+    <a th:href="@{'/delete/' + ${c.id}}"><td>delete</td></a>
+<br />
+
+<a th:href="@{/add}">Add Chart</a>
+</body>
+</html>
