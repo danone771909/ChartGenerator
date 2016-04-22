@@ -31,8 +31,10 @@ public class HelloController {
             String s = chartGenerator.dataToString(c.getInput());
             if(s==null)
                 return "redirect:add";
+
             c.setResult(s);
             chartRepository.save(c);
+
             return "redirect:result";
         }
             return "redirect:add";

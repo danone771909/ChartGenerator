@@ -12,7 +12,10 @@ import java.util.Collection;
 public interface ChartRepository extends CrudRepository<Chart, Long>
 {
     @RestResource(path = "by-chartname")
-    Chart findByChartname(@Param("id") String chartname);
+    Collection<Chart> findByChartname(@Param("id") String chartname);
+
+    @RestResource(path = "by-input")
+    Collection<Chart> findByInput(@Param("id") String input);
 
     Collection<Chart> findAll();
 }

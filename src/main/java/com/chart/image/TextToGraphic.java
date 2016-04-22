@@ -1,22 +1,18 @@
 package com.chart.image;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by Daniel on 2016-04-20.
  */
 public class TextToGraphic {
 
-    public TextToGraphic(String text)
+    public TextToGraphic()
     {
-        textToImage(text);
     }
 
-    public void textToImage(String text)
+    public BufferedImage textToImage(String text)
     {
         /*
            Because font metrics is based on a graphics context, we need to create
@@ -51,11 +47,8 @@ public class TextToGraphic {
         drawString(g2d, text, 0, 0);
         //g2d.drawString(text, 0, fm.getAscent());
         g2d.dispose();
-        try {
-            ImageIO.write(img, "png", new File("Text.png"));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+
+        return img;
     }
 
     private void drawString(Graphics2D g, String text, int x, int y) {

@@ -19,6 +19,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/error").setViewName("error");
         registry.addViewController("/result").setViewName("result");
         registry.addViewController("/chart").setViewName("chart");
+        registry.addViewController("/image").setViewName("image");
     }
 
 }
