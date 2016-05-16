@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<style>
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 40px;
+    }
+    a{
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+<head>
+    <title>Image</title>
+</head>
+<body>
+<div>
+
+    <img  th:src="*{'data:image/png;base64,'+ image}" /> <!--/${image_id} ${c.result} -->
+
+<br />
+
+<a th:href="@{'/chart/'+ ${c.id}}">Back</a>
+</div>
+</body>
+</html>
